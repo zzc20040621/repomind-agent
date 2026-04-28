@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RepoMind Agent Quality Report</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background:#f6f8fb; margin:0; color:#172033; }
+.container { max-width:1180px; margin:32px auto; padding:0 24px; }
+.header { display:flex; align-items:center; gap:18px; margin-bottom:24px; }
+.logo { width:64px; height:64px; border-radius:18px; display:grid; place-items:center; background:#eaf2ff; color:#2563eb; font-size:30px; font-weight:800; }
+h1 { margin:0; font-size:38px; }
+.subtitle { color:#65758b; margin-top:6px; }
+.grid { display:grid; grid-template-columns:1.25fr .9fr; gap:20px; }
+.card { background:white; border:1px solid #e4e8ef; border-radius:16px; padding:22px; box-shadow:0 8px 24px rgba(24,39,75,.04); }
+.score-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.score { border-radius:14px; padding:20px; text-align:center; border:1px solid #dbe4f0; background:#fbfdff; }
+.score b { font-size:34px; color:#2563eb; }
+.score span { display:block; color:#65758b; margin-top:6px; }
+table { width:100%; border-collapse:collapse; font-size:14px; }
+th, td { text-align:left; border-bottom:1px solid #edf0f5; padding:12px 10px; vertical-align:top; }
+th { color:#506176; font-weight:700; background:#fafbfe; }
+.badge { padding:4px 10px; border-radius:999px; font-weight:700; font-size:12px; }
+.high { background:#fee2e2; color:#b91c1c; } .medium { background:#fef3c7; color:#92400e; } .low { background:#dbeafe; color:#1d4ed8; }
+.workflow { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.step { background:#eef6ff; border:1px solid #bfdbfe; color:#1d4ed8; border-radius:12px; padding:12px 14px; font-weight:700; }
+.footer { margin-top:20px; color:#65758b; font-size:13px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="logo">&lt;/&gt;</div>
+    <div>
+      <h1>Code Quality Report</h1>
+      <div class="subtitle">RepoMind Agent Repository Governance Summary · Project: demo_repo</div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h2>Project Summary</h2>
+      <p>This report presents an automated assessment of repository structure, documentation, testing practices and maintainability.</p>
+      <p><b>Total files:</b> 87 &nbsp; <b>Python files:</b> 38 &nbsp; <b>Markdown files:</b> 21</p>
+      <p><b>Entry file:</b> <code>app\main.py</code> &nbsp; <b>Detected issues:</b> 8</p>
+      <h3>Agent Workflow</h3>
+      <div class="workflow"><div class="step">Scan Repo</div><span>→</span><div class="step">Analyze</div><span>→</span><div class="step">Quality Report</div><span>→</span><div class="step">README Draft</div><span>→</span><div class="step">Test Plan</div></div>
+    </div>
+    <div class="card">
+      <h2>Quality Score Card</h2>
+      <div class="score-grid">
+        <div class="score"><b>82</b><span>Readability</span></div>
+        <div class="score"><b>79</b><span>Maintainability</span></div>
+        <div class="score"><b>88</b><span>Documentation</span></div>
+        <div class="score"><b>74</b><span>Test Suggestion</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:20px">
+    <h2>Key Findings</h2>
+    <table><thead><tr><th>Severity</th><th>Category</th><th>File</th><th>Finding</th><th>Recommended Action</th></tr></thead><tbody><tr><td><span class='badge high'>High</span></td><td>Configuration</td><td><code>app\main.py</code></td><td>Hard-coded local path detected</td><td>Move paths into configuration or environment variables.</td></tr><tr><td><span class='badge medium'>Medium</span></td><td>Reliability</td><td><code>app\main.py</code></td><td>Broad exception handling detected</td><td>Catch specific exceptions and add meaningful error messages.</td></tr><tr><td><span class='badge low'>Low</span></td><td>Documentation</td><td><code>app\main.py</code></td><td>Missing docstring: load_config</td><td>Add a short docstring explaining responsibility and input/output.</td></tr><tr><td><span class='badge low'>Low</span></td><td>Documentation</td><td><code>app\main.py</code></td><td>Missing docstring: process_items</td><td>Add a short docstring explaining responsibility and input/output.</td></tr><tr><td><span class='badge low'>Low</span></td><td>Documentation</td><td><code>app\main.py</code></td><td>Missing docstring: ReportService</td><td>Add a short docstring explaining responsibility and input/output.</td></tr><tr><td><span class='badge low'>Low</span></td><td>Documentation</td><td><code>app\main.py</code></td><td>Missing docstring: build</td><td>Add a short docstring explaining responsibility and input/output.</td></tr><tr><td><span class='badge low'>Low</span></td><td>Documentation</td><td><code>app\utils.py</code></td><td>Missing docstring: normalize_name</td><td>Add a short docstring explaining responsibility and input/output.</td></tr><tr><td><span class='badge medium'>Medium</span></td><td>Documentation</td><td><code>README.md</code></td><td>README lacks startup or usage instructions</td><td>Add Quick Start and Usage sections.</td></tr></tbody></table>
+  </div>
+  <div class="card" style="margin-top:20px">
+    <h2>Recommended Actions</h2>
+    <ul>
+      <li>Standardize configuration management and remove local hard-coded paths.</li>
+      <li>Improve exception handling with specific exceptions and meaningful logs.</li>
+      <li>Keep README, tests and dependency files updated during each iteration.</li>
+      <li>Create unit tests for scanner, analyzer, report builder and edge cases.</li>
+    </ul>
+  </div>
+  <div class="footer">Generated by RepoMind Agent multi-step workflow.</div>
+</div>
+</body>
+</html>

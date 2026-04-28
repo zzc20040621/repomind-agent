@@ -1,0 +1,11 @@
+[INFO] Starting RepoMind Agent workflow
+[INFO] Repository: C:\Users\zzc\Desktop\repomind-agent\demo_repo
+[INFO] Output directory: C:\Users\zzc\Desktop\repomind-agent\outputs
+[INFO] Repository scan completed. files=87, python_files=38, markdown_files=21
+[INFO] Entry point: app\main.py
+[INFO] Detected modules: app\main.py, app\utils.py, app\services\service_01.py, app\services\service_02.py, app\services\service_03.py
+[INFO] Detected issues: 8
+[DONE] README draft generated: C:\Users\zzc\Desktop\repomind-agent\outputs\README_generated.md
+[DONE] Quality report generated: quality_report.md, quality_report.html
+[DONE] Test plan generated: C:\Users\zzc\Desktop\repomind-agent\outputs\test_plan.md
+[DONE] RepoMind Agent completed successfully. artifacts=4
